@@ -1,141 +1,127 @@
-
-```markdown
 # Earthquake Simulator
 
 ## Overview
 
-This Earthquake Simulator is a hybrid Unity + Python application designed to simulate real-time seismic activity, visualize the impact of earthquakes on buildings, and perform predictive structural analysis. It reads real earthquake wave data in JSON format, simulates P-wave and S-wave effects, and provides early warning and risk assessment per building based on realistic parameters like elastic modulus and moment of inertia.
+**Earthquake Simulator** is a hybrid **Unity + Python** application designed to simulate real-time seismic activity, visualize earthquake impacts on buildings, and perform predictive structural analysis.
 
-The system is tailored for educational and training purposes to demonstrate earthquake behavior and structural vulnerability in real time.
+It reads **real earthquake wave data in JSON format**, simulates **P-wave** and **S-wave** effects, and provides early warnings and risk assessments based on realistic structural parameters like **elastic modulus** and **moment of inertia**.
+
+**Purpose:** Educational and training tool to demonstrate earthquake behavior and real-time structural vulnerability.
 
 ---
 
 ## Features
 
 ### 1. Real-time Data-Driven Simulation
-- Reads a JSON file (`earthquake_data.json`) containing magnitude, P-wave, and S-wave arrival times.
-- Simulates shaking events in Unity to mimic real seismic activity.
+- Reads `earthquake_data.json` containing magnitude, P-wave, and S-wave arrival times.
+- Triggers Unity-based seismic simulation based on this data.
 
 ### 2. P-Wave and S-Wave Simulation
-- **P-Wave (Primary Wave):** Lighter, faster, and non-destructive. Simulated with light camera shake.
-- **S-Wave (Secondary Wave):** Slower but much stronger. Simulated with intense shaking and structure displacement.
-- Alerts and visual feedback change based on wave type and severity.
+- **P-Wave (Primary Wave)**  
+  - Fast, low-intensity  
+  - Simulated with subtle camera shake
+- **S-Wave (Secondary Wave)**  
+  - Slower but high-intensity  
+  - Simulated with intense shake and structural displacement
+- Real-time alerts and visual feedback change depending on wave type and severity.
 
 ### 3. Building Displacement & Risk Analysis
-- Every building is evaluated using physics-based calculations:
-  - Displacement is calculated from:
+- Every structure undergoes physics-based evaluation:
+  - Factors used:
     - Elastic Modulus
     - Moment of Inertia
-    - Building height and number of floors
-  - Risk is classified as Low, Medium, or High.
-- Predictive analysis is done *before* S-wave hits.
+    - Height & Floor Count
+- Risk levels:
+  - Green = Low
+  - Yellow = Medium
+  - Red = High
+- Predictive analysis runs before S-wave arrives.
 
 ### 4. Visual & Structural Feedback
-- Buildings visually tilt based on severity.
-- Color-coded risk:
+- Buildings tilt based on impact severity.
+- Color-coded risk visualization:
   - Green = Safe
   - Yellow = Moderate risk
   - Red = High risk
-- In high-risk cases, a warning is raised with a flashing alert sign.
+- Flashing alerts for high-risk cases.
 
-### 5. Logging
-- All seismic events and analysis results are logged in `Application.persistentDataPath/earthquake_log.txt`.
-- Format includes timestamps and descriptions, useful for post-simulation reviews.
-
----
-
-## Folder Structure
-
-```
-EarthquakeSimulator/
-├── Assets/
-│   └── Scripts/
-│       └── EarthquakeManager.cs
-├── python_scripts/
-│   ├── generate_earthquake_data.py
-│   └── Screenshots/
-│       ├── ss1.png
-│       ├── ss2.png
-│       ├── ss3.png
-│       ├── ss4.png
-│       └── ss5.png
-└── StreamingAssets/
-    └── earthquake_data.json
-```
+### 5. Seismic Event Logging
+- Logs all simulations to:  
+  `Application.persistentDataPath/earthquake_log.txt`
+- Includes:
+  - Timestamped entries
+  - Wave detection
+  - Displacement
+  - Risk classification
 
 ---
 
 ## Screenshots
 
-
-![P-Wave Detection](python_scripts/Screenshots/EEWS1.png)
-
-
-![Predictive Warning](python_scripts/Screenshots/EEWS2.png)
-
-
-![S-Wave Impact](python_scripts/Screenshots/EEWS3.png)
-
-
-![Tilted Buildings](python_scripts/Screenshots/EEWS4.png)
-
-![Log File Screenshot](python_scripts/Screenshots/EEWS5.png)
+| Description | Image |
+|------------|--------|
+| P-Wave Detection | ![](python_scripts/Screenshots/EEWS1.png) |
+| Predictive Warning | ![](python_scripts/Screenshots/EEWS2.png) |
+| S-Wave Impact | ![](python_scripts/Screenshots/EEWS3.png) |
+| Tilted Buildings | ![](python_scripts/Screenshots/EEWS4.png) |
+| Log File Output | ![](python_scripts/Screenshots/EEWS5.png) |
 
 ---
 
 ## How to Use
 
-### 1. Unity Setup
-- Open the project in Unity.
-- Ensure your building prefabs are assigned in the `EarthquakeManager` component.
-- Place `earthquake_data.json` inside the `StreamingAssets` folder.
+### Unity Setup
+1. Open project in **Unity 2021.3+**.
+2. Assign building prefabs to the `EarthquakeManager` script.
+3. Place `earthquake_data.json` in the `StreamingAssets` folder.
 
-### 2. Python Script
-- `generate_earthquake_data.py` generates sample JSON data.
-- Place it in `StreamingAssets` or point to the correct path in Unity.
+### Python Script
+- Use `generate_earthquake_data.py` to create sample data.
+- Save the file in `StreamingAssets` or update Unity path accordingly.
 
-### 3. Play Simulation
-- Press **Play** in Unity Editor.
-- The script checks every 5 seconds for updated earthquake data.
-- When a file is detected, simulation begins automatically with proper sequencing.
+### Running the Simulation
+- Hit **Play** in Unity Editor.
+- Unity checks for new JSON data every 5 seconds.
+- When detected, simulation auto-starts with correct wave sequencing.
 
 ---
 
 ## Requirements
 
 ### Unity
-- Unity 2021.3+ (Tested on LTS)
-- TextMeshPro (for on-screen alerts)
+- **Version**: 2021.3+ (LTS Recommended)  
+- **Packages**:  
+  - TextMeshPro (for on-screen warnings)
 
-### Python (Optional for JSON Generation)
-- Python 3.8+
-- No third-party dependencies
+### Python (Optional - for JSON generation)
+- **Version**: 3.8+
+- **Dependencies**: None (Pure Python)
 
 ---
 
 ## Customization
 
-You can adjust the following parameters inside `EarthquakeManager.cs`:
+All customization can be done in `EarthquakeManager.cs`:
 
-- `ShakeCamera()` → Adjust intensity & duration for different waves.
-- `CalculateDisplacement()` → Tune force multiplier and structural sensitivity.
-- `GetCautionLevel()` → Adjust displacement thresholds for risk classification.
-- `TiltBuilding()` → Control tilt angle and duration per building.
+| Function | Description |
+|----------|-------------|
+| `ShakeCamera()` | Tune intensity & duration for P/S waves |
+| `CalculateDisplacement()` | Adjust structural impact via force multipliers |
+| `GetCautionLevel()` | Modify displacement thresholds for risk levels |
+| `TiltBuilding()` | Change tilt degree and animation timing |
 
 ---
 
 ## License
 
-This project is free to use for educational and research purposes. Credit is appreciated if reused or modified.
+Free to use for **educational and research** purposes.  
+Credit is appreciated if reused or modified.
 
 ---
 
 ## Author
 
-Developed by Chinmay HS & Mahima AG.
-Focus: Real-time physical simulation + data-driven analysis for structural response in seismic environments.
-```
+**Developed by:**  
+**Chinmay HS** & **Mahima AG**  
+Focus: Real-time physics simulation + data-driven structural analysis in seismic zones.
 
----
-
-Let me know if you want a version saved to a file or placed in your Unity project automatically.
