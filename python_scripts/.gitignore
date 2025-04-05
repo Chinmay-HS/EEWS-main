@@ -1,0 +1,62 @@
+# ============================
+# Python + PyCharm .gitignore
+# ============================
+
+# === Bytecode and Caches ===
+__pycache__/
+*.py[cod]
+*$py.class
+
+# === PyCharm Project Files ===
+.idea/
+
+# === Virtual Environments ===
+venv/
+env/
+ENV/
+.venv/
+.ENV/
+env.bak/
+venv.bak/
+
+# === Jupyter Notebook Checkpoints ===
+.ipynb_checkpoints/
+
+# === VS Code Folder (in case you switch editors) ===
+.vscode/
+
+# === Logs and Dumps ===
+*.log
+*.out
+*.bak
+*.swp
+*.tmp
+
+# === Unit Test Caches ===
+.cache/
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# === Build Files ===
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# === MyPy and Pyre Type Checking ===
+.mypy_cache/
+.pyre/
+
+# === Pylint and Linting Tools ===
+.pylint.d/
+
+# === Mac/Windows OS Files ===
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# === Jupyter Runtime Files ===
+~/.local/share/jupyter/runtime/

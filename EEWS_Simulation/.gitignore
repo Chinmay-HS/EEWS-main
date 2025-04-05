@@ -1,0 +1,88 @@
+# ===========================
+# Unity .gitignore template
+# ===========================
+
+# === OS ===
+.DS_Store
+Thumbs.db
+
+# === Unity Generated Folders ===
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Mm]emoryCaptures/
+
+# === VS/JetBrains Rider ===
+.vscode/
+.idea/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+
+# === Logs ===
+*.log
+
+# === Crash/Diagnostics ===
+sysinfo.txt
+
+# === Auto-generated ===
+*.pidb
+*.booproj
+*.svd
+
+# === Android/Gradle ===
+.gradle/
+**/build/
+*.apk
+*.aab
+*.unitypackage
+
+# === iOS/Xcode ===
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.xcworkspace/
+*.xcuserstate
+*.xcuserdatad
+
+# === Build Artifacts ===
+*.apk
+*.aab
+*.xcodeproj
+
+# === Unity Asset Store Tools ===
+Assets/AssetStoreTools*
+
+# === Addressables ===
+Assets/AddressableAssetsData/*/AssetGroups/*.bin*
+Assets/AddressableAssetsData/*/AssetGroups/*.link*
+
+# === Collaborate (if used) ===
+.collabignore
+.collab/
+
+# === Rider plugin stuff ===
+.idea/
+
+# === Other Caches ===
+*.vsconfig
+.vs/
+
+# === Python / External Tools ===
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# === Mac Specific ===
+*.DS_Store
+
+# === Windows Specific ===
+*.bak
+*.swp

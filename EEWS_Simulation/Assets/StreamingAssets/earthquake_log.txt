@@ -1,0 +1,7 @@
+[2025-04-05 00:07:57] 🌍 Earthquake Detected
+Magnitude: 6.7
+P-Wave: 0.2s
+S-Wave: 0.34s
+[2025-04-05 00:07:57] 🚨 P-Wave Detected: Minor shaking expected!
+[2025-04-05 00:07:59] 🔮 Running Predictive Structural Displacement Analysis...
+[2025-04-05 00:07:59] 🏢 Building1 | Displacement: 2.792 m | Risk: High
