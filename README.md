@@ -60,11 +60,11 @@ It reads **real earthquake wave data in JSON format**, simulates **P-wave** and 
 
 | Description | Image |
 |------------|--------|
-| P-Wave Detection | ![](python_scripts/Screenshots/EEWS1.png) |
+| Wave Detection | ![](python_scripts/Screenshots/EEWS1.png) |
 | Predictive Warning | ![](python_scripts/Screenshots/EEWS2.png) |
-| S-Wave Impact | ![](python_scripts/Screenshots/EEWS3.png) |
+| Wave Impact | ![](python_scripts/Screenshots/EEWS3.png) |
 | Tilted Buildings | ![](python_scripts/Screenshots/EEWS4.png) |
-| Log File Output | ![](python_scripts/Screenshots/EEWS5.png) |
+| Unity Fields| ![](python_scripts/Screenshots/EEWS5.png) |
 
 ---
 
